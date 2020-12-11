@@ -14,17 +14,21 @@ def count_holes(num):
 
         if dgt in [0, 4, 6, 9]:
             holes += 1
-        if dgt == 8:
+        elif dgt == 8:
             holes += 2
-        if num == 0:
+
+        if num == 0: # imitating the do-while behavior
             break
+
     return holes
 
 def main():
     while True:
         value = input('Enter an integer (q to exit): ')
+
         if value.lower().strip() == 'q':
             break
+
         if count_holes(value) != 'err':
             if count_holes(value) > 0:
                 print('The number of holes: ', count_holes(value))
