@@ -14,8 +14,10 @@ def count_holes(num):
     return holes
 
 while True:
-    value = input("Enter an integer: ")
+    value = input("Enter an integer (q to exit): ")
     try:
+        if value.lower().strip() == 'q':
+            break
         value = int(value)
         print("The number of holes: ", count_holes(value))
     except:
