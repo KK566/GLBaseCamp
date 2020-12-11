@@ -2,7 +2,7 @@ def count_holes(num):
     holes = 0
     while True:
         flp = num / 10 # number with decimal places
-        num = int(num / 10) # integer
+        num = int(flp) # integer
         dgt = round((flp - num) * 10) # resulting digit
 
         if dgt in [0, 4, 6, 9]:
