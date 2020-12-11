@@ -1,5 +1,12 @@
 def count_holes(num):
     holes = 0
+
+    try:
+        num = int(num)
+    except:
+        print('Invalid input.')
+        return 'err'
+
     while True:
         flp = num / 10 # number with decimal places
         num = int(flp) # integer
@@ -13,12 +20,16 @@ def count_holes(num):
             break
     return holes
 
-while True:
-    value = input("Enter an integer (q to exit): ")
-    try:
+def main():
+    while True:
+        value = input('Enter an integer (q to exit): ')
         if value.lower().strip() == 'q':
             break
-        value = int(value)
-        print("The number of holes: ", count_holes(value))
-    except:
-        print("Invalid input.")
+        if count_holes(value) != 'err':
+            if count_holes(value) > 0:
+                print('The number of holes: ', count_holes(value))
+            else:
+                print('There are no holes in this number.')
+
+if __name__ == '__main__':
+    main()
