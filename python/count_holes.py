@@ -5,7 +5,7 @@ def count_holes(num):
         num = int(num / 10) # integer
         dgt = round((flp - num) * 10) # resulting digit
 
-        if dgt == 0 or dgt == 4 or dgt == 6 or dgt == 9:
+        if dgt in [0, 4, 6, 9]:
             holes += 1
         if dgt == 8:
             holes += 2
